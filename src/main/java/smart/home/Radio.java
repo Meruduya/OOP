@@ -59,8 +59,4 @@ public class Radio {
             currentRadioStation++;
         }
     }
-
-    public void changeStation(int stationNumber) {
-        setCurrentRadioStation(stationNumber);
-    }
 }
