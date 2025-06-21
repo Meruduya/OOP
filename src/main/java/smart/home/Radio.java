@@ -3,6 +3,16 @@ package smart.home;
 public class Radio {
     private int currentVolume;
     private int currentRadioStation;
+    private int maxStation;
+
+
+    public Radio() {
+        this.maxStation = 9;
+    }
+
+    public  Radio(int stationsCount) {
+        this.maxStation = stationsCount -1;
+    }
 
     //Громкость
 
@@ -35,28 +45,28 @@ public class Radio {
     }
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation > 9) {
-            currentRadioStation = 0;
-        } else if (newCurrentRadioStation < 0) {
-            currentRadioStation = 9;
-        } else {
-            currentRadioStation = newCurrentRadioStation;
+        if (newCurrentRadioStation < 0) {
+            return;
         }
-    }
+        if (newCurrentRadioStation > maxStation) {
+            return;
+        }
+        this.currentRadioStation = newCurrentRadioStation;
+        }
 
     public void prev() {
-        if (currentRadioStation == 0) {
-            currentRadioStation = 9;
+        if (currentRadioStation != 0) {
+            currentRadioStation --;
         } else {
-            currentRadioStation--;
+            currentRadioStation = maxStation;
         }
     }
 
     public void next() {
-        if (currentRadioStation == 9) {
-            currentRadioStation = 0;
+        if (currentRadioStation != maxStation) {
+            currentRadioStation ++;
         } else {
-            currentRadioStation++;
+            currentRadioStation = 0;
         }
     }
 }
