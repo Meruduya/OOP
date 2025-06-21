@@ -1,18 +1,17 @@
 package smart.home;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
 
 public class RadioTest {
     @Test
     public void shouldSetCurrentVolume() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setCurrentVolume(50);
+        radio.setCurrentVolume(15);
 
-        int expected = 50;
+        int expected = 15;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -85,7 +84,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(-1);
 
-        int expected = 9;
+        int expected = 0;
         int actual = radio.getCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -113,6 +112,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStation2() {
         Radio radio = new Radio();
@@ -136,6 +136,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStation4() {
         Radio radio = new Radio();
@@ -147,4 +148,5 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 }
