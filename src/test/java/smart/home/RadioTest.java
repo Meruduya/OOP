@@ -112,6 +112,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStation2() {
         Radio radio = new Radio();
@@ -135,6 +136,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStation4() {
         Radio radio = new Radio();

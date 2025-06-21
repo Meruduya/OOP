@@ -10,8 +10,8 @@ public class Radio {
         this.maxStation = 9;
     }
 
-    public  Radio(int stationsCount) {
-        this.maxStation = stationsCount -1;
+    public Radio(int stationsCount) {
+        this.maxStation = stationsCount - 1;
     }
 
     //Громкость
@@ -52,11 +52,11 @@ public class Radio {
             return;
         }
         this.currentRadioStation = newCurrentRadioStation;
-        }
+    }
 
     public void prev() {
         if (currentRadioStation != 0) {
-            currentRadioStation --;
+            currentRadioStation--;
         } else {
             currentRadioStation = maxStation;
         }
@@ -64,7 +64,7 @@ public class Radio {
 
     public void next() {
         if (currentRadioStation != maxStation) {
-            currentRadioStation ++;
+            currentRadioStation++;
         } else {
             currentRadioStation = 0;
         }
